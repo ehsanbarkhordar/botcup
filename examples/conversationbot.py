@@ -24,6 +24,8 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
 import logging
 
 # Enable logging
+from examples.config import Config
+
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
@@ -118,7 +120,7 @@ def error(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("TOKEN")
+    updater = Updater(Config.bot_token)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
